@@ -8,6 +8,8 @@ class PlantScoringUnit < ActiveRecord::Base
 
   validates :scoring_unit_name, :plant_trial_id, :plant_accession_id, presence: true
 
+  validates :biosamples_id, uniqueness: true
+
   include Relatable
   include Filterable
   include Pluckable
